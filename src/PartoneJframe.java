@@ -132,14 +132,15 @@ public class PartoneJframe extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-   jTextField1.setText("hey");
-        this.setVisible(false);
-        new FirstfightguyJFrame().setVisible(true);
-                // TODO add your handling code here:
+   
+        
+     
+                // TODO add your handling code here:rue);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+         this.setVisible(false);
+        new FirstfightguyJFrame().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

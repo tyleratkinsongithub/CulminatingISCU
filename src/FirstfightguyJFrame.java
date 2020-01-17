@@ -10,9 +10,13 @@
  */
 public class FirstfightguyJFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FirstfightguyJFrame
-     */
+ int numRolls = 0;
+    int numCorrect = 0;
+    int numIncorrect = 0;
+    int guess, roll;
+    double perCorrect;
+    
+    
     public FirstfightguyJFrame() {
         initComponents();
     }
@@ -29,8 +33,11 @@ public class FirstfightguyJFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        rollLabel = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        Winbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,9 +45,7 @@ public class FirstfightguyJFrame extends javax.swing.JFrame {
 
         jLabel2.setText("You seem to be outmatched as he has a weapon however, you feel a sudden surge of electrcity go through your hands");
 
-        jLabel3.setText("You try to control the force to defeat Walter the galatic pedophile");
-
-        jLabel4.setText("A roll over 2 or over allows you to control that power");
+        jLabel3.setText("You try to control the force to defeat Walter the galatic pedophile but theres a chance it wont work");
 
         jButton1.setText("Roll");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -48,6 +53,10 @@ public class FirstfightguyJFrame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jButton2.setText("If you rolled a 1.");
+
+        Winbutton.setText("If you rolled 2-6.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,14 +71,21 @@ public class FirstfightguyJFrame extends javax.swing.JFrame {
                         .addGap(109, 109, 109)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jLabel3))
+                        .addGap(242, 242, 242)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(rollLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(jButton1))
+                        .addGap(73, 73, 73)
+                        .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(jLabel4)))
+                        .addGap(92, 92, 92)
+                        .addComponent(jButton2)
+                        .addGap(213, 213, 213)
+                        .addComponent(Winbutton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -79,20 +95,35 @@ public class FirstfightguyJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addComponent(jButton1)
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(rollLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(Winbutton))
+                .addGap(14, 14, 14)
+                .addComponent(jLabel4)
+                .addGap(93, 93, 93))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        roll = (int)Math.round(Math.random()*5+1);
+        
+        
+        numRolls++;
+        
+        rollLabel.setText("" + roll);
+        
+        {
+           
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -131,10 +162,13 @@ public class FirstfightguyJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Winbutton;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel rollLabel;
     // End of variables declaration//GEN-END:variables
 }
